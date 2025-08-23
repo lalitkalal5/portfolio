@@ -76,7 +76,7 @@ const App = () => {
         name: "News-Android App",
         desc: "An Android app using Kotlin, Retrofit & Firebase.",
         link: "https://github.com/lalitkalal5/NewsApp",
-        image: "/images/news.png",
+        image: "/images/Newsapp.png",
         git:"https://github.com/lalitkalal5/NewsApp"
       }
     ].map((project) => (
