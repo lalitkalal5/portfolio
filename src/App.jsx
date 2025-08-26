@@ -21,10 +21,10 @@ const App = () => {
         <h1 className="text-5xl font-bold mb-4">Hi, I’m <span className="text-yellow-300">Lalit</span></h1>
         <p className="text-xl mb-6"> Android dev | Flutter | MERN Stack Developer </p>
         <div className="flex gap-4">
-          <a href="/https://github.com/lalitkalal5/" className="px-6 py-3 bg-yellow-400 text-black rounded-xl shadow-lg">Githu</a>
-          <a href="https://www.linkedin.com/in/lalit-kalal-481662198/" className="px-6 py-3 bg-white text-black rounded-xl shadow-lg">LinkedIn</a>
+          <a href="https://github.com/lalitkalal5/" className="px-6 py-3 bg-grey-800 text-black rounded-xl shadow-lg">Github</a>
+          <a href="https://www.linkedin.com/in/lalit-kalal-481662198/" className="px-6 py-3 bg-grey-800 text-black rounded-xl shadow-lg">LinkedIn</a>
         </div>
-        <div className="flex gap-4">
+        <div className="flex gap-6 margin-2">
           <a href="#projects" className="px-6 py-3 bg-yellow-400 text-black rounded-xl shadow-lg">View Projects</a>
           <a href="#contact" className="px-6 py-3 bg-white text-black rounded-xl shadow-lg">Contact Me</a>
         </div>
