@@ -24,9 +24,9 @@ const App = () => {
           <a href="#projects" className="px-6 py-3 bg-yellow-400 text-black rounded-xl shadow-lg">View Projects</a>
           <a href="#contact" className="px-6 py-3 bg-white text-black rounded-xl shadow-lg">Contact Me</a>
         </div>
-         <div className="flex gap-4">
-          <a href="https://github.com/lalitkalal5/" className="px-6 py-3 bg-transparent text-black rounded-xl shadow-lg">Github</a>
-          <a href="https://www.linkedin.com/in/lalit-kalal-481662198/" className="px-6 py-3 bg-transparent text-black rounded-xl shadow-lg">LinkedIn</a>
+         <div className="flex gap-4 mt-6">
+          <a href="https://github.com/lalitkalal5/" className="px-6 py-3 bg-transparent text-black rounded-xl shadow-lg"><img src="/githu logo.png"></a>
+          <a href="https://www.linkedin.com/in/lalit-kalal-481662198/" className="px-6 py-3 bg-transparent text-black rounded-xl shadow-lg"><img src="/linkedin.png"></a>
         </div>
       </section>
 
