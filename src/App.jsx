@@ -19,7 +19,7 @@ const App = () => {
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 text-white pt-20">
         <h1 className="text-5xl font-bold mb-4">Hi, I’m <span className="text-yellow-300">Lalit</span></h1>
-        <p className="text-xl mb-6"> Android dev | Flutter | MERN Stack Developer </p>
+        <p className="text-xl mb-6"> Ruby on Rails| Flutter | MERN Stack Developer </p>
         <div className="flex gap-6 margin-2">
           <a href="#projects" className="px-6 py-3 bg-yellow-400 text-black rounded-xl shadow-lg">View Projects</a>
           <a href="#contact" className="px-6 py-3 bg-white text-black rounded-xl shadow-lg">Contact Me</a>
@@ -39,7 +39,7 @@ const App = () => {
     <p>My expertise extends to real-time communication technologies such as WebRTC and Socket.IO, 
        and I am familiar with Django.</p>
     <hr className="border-gray-300" />
-    <p>Currently, I am diving into the world of Android app development.</p>
+    <p>Currently, I am diving into the world of app development.</p>
     <hr className="border-gray-300" />
     <p>Enhancing skills in API integration as Retrofit, UI design, and cloud storage as Firebase solutions.</p>
   </div>
