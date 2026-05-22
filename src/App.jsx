@@ -49,7 +49,7 @@ const App = () => {
       <section id="skills" className="bg-gray-100 py-20">
         <h2 className="text-3xl font-bold text-center mb-8">Technologies & Skills</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto px-6">
-          {[ 'React', 'Node.js','Java-Script','MongoDB','Flutter','Retrofit','Firebase','socket.io'].map(skill => (
+          {[ 'React', 'Node.js','Java-Script','MongoDB','Flutter','Retrofit','Firebase','socket.io','Shopify'].map(skill => (
             <div key={skill} className="p-4 bg-white rounded-xl shadow text-center font-medium hover:scale-105 transition-transform">
               {skill}
             </div>
