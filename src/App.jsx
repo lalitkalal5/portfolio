@@ -3,7 +3,7 @@ import './App.css'
 
 const githubUrl = 'https://github.com/lalitkalal5'
 const linkedinUrl = 'https://www.linkedin.com/in/lalit-kalal-481662198/'
-const email = 'lalitkalal71@gmail.com'
+const email = 'lalitkalal171@gmail.com'
 
 const skillGroups = [
   {
