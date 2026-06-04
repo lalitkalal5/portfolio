@@ -1,168 +1,333 @@
-import React from 'react';
+import { useState } from 'react'
+import './App.css'
 
-const App = () => {
+const githubUrl = 'https://github.com/lalitkalal5'
+const linkedinUrl = 'https://www.linkedin.com/in/lalit-kalal-481662198/'
+const email = 'lalitkalal71@gmail.com'
+
+const skillGroups = [
+  {
+    title: 'Backend & Data',
+    skills: ['Ruby', 'Ruby on Rails', 'Node.js', 'PostgreSQL', 'MySQL', 'MongoDB'],
+  },
+  {
+    title: 'Frontend & Mobile',
+    skills: ['JavaScript', 'React', 'Flutter', 'Kotlin', 'Jetpack Compose', 'Pygame'],
+  },
+  {
+    title: 'Realtime & Cloud',
+    skills: ['WebSocket', 'WebRTC', 'Socket.IO', 'Firebase', 'AWS S3', 'REST APIs'],
+  },
+  {
+    title: 'Tools & Commerce',
+    skills: ['Git', 'GitHub', 'Postman', 'Shopify', 'MediaPipe', 'Google Sheets'],
+  },
+]
+
+const projects = [
+  {
+    name: 'Finance Management System',
+    type: 'Ruby on Rails',
+    description:
+      'An institutional finance platform for tracking income, expenditures, taxes, and visual analytics with an emphasis on reliable financial records.',
+    tags: ['Rails', 'PostgreSQL', 'Analytics'],
+    accent: 'violet',
+    status: 'Professional work',
+  },
+  {
+    name: 'SecondShelf',
+    type: 'E-Commerce Platform',
+    description:
+      'A full-stack marketplace for buying and selling pre-owned books, including catalogue search, seller listings, cart, checkout, and order tracking.',
+    tags: ['E-Commerce', 'Full Stack', 'UX'],
+    accent: 'amber',
+    status: 'In progress',
+  },
+  {
+    name: 'Annochat',
+    type: 'Realtime Video Chat',
+    description:
+      'An anonymous peer-to-peer video chat experience with realtime user matching and browser-based communication.',
+    tags: ['WebRTC', 'Socket.IO', 'JavaScript'],
+    image: '/images/annochat.png',
+    demo: 'https://annochat.onrender.com/',
+    github: 'https://github.com/lalitkalal5/annochat',
+    accent: 'cyan',
+  },
+  {
+    name: 'Twitter Clone',
+    type: 'MERN Social Platform',
+    description:
+      'A full-stack social media application where users can publish posts, like content, and follow other accounts.',
+    tags: ['React', 'Node.js', 'MongoDB'],
+    image: '/images/twitter-clone.png',
+    demo: 'https://twitterclone-7pir.vercel.app/',
+    github: 'https://github.com/lalitkalal5/twitterclone',
+    accent: 'blue',
+  },
+  {
+    name: 'Android News Dashboard',
+    type: 'Native Android App',
+    description:
+      'A modern news reader with search and saved stories, built around a clean declarative Android interface.',
+    tags: ['Kotlin', 'Jetpack Compose', 'Retrofit'],
+    image: '/images/Newsapp.png',
+    github: 'https://github.com/lalitkalal5/NewsApp',
+    accent: 'green',
+  },
+  {
+    name: 'Hand-Gesture Interaction',
+    type: 'Computer Vision',
+    description:
+      'An interactive Python interface using MediaPipe to detect and translate hand movements into realtime actions.',
+    tags: ['Python', 'MediaPipe', 'Pygame'],
+    accent: 'rose',
+    status: 'Experimental build',
+  },
+]
+
+const ArrowIcon = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M5 12h14M13 6l6 6-6 6" />
+  </svg>
+)
+
+const GithubIcon = () => (
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path
+      fill="currentColor"
+      d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.69c-2.78.61-3.37-1.18-3.37-1.18-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.89 1.53 2.34 1.09 2.91.83.09-.65.35-1.09.64-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.6 9.6 0 0 1 12 6.84a9.6 9.6 0 0 1 2.5.34c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.73c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"
+    />
+  </svg>
+)
+
+function App() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  const closeMenu = () => setMenuOpen(false)
+
   return (
-    <div className="font-sans text-gray-900 bg-gray-50">
-      {/* Navbar */}
-      <header className="fixed top-0 left-0 w-full bg-white shadow z-50">
-        <nav className="max-w-6xl mx-auto flex justify-between items-center py-4 px-6">
-          <h1 className="text-2xl font-bold text-blue-600">LALIT KALAL</h1>
-          <ul className="flex gap-6 text-gray-700 font-medium">
-            <li><a href="#about" className="hover:text-blue-600">About</a></li>
-            <li><a href="#skills" className="hover:text-blue-600">Skills</a></li>
-            <li><a href="#projects" className="hover:text-blue-600">Projects</a></li>
-            <li><a href="#contact" className="hover:text-blue-600">Contact</a></li>
-          </ul>
+    <div className="site-shell">
+      <header className="site-header">
+        <a className="brand" href="#top" onClick={closeMenu} aria-label="Lalit Kalal home">
+          LK<span>.</span>
+        </a>
+        <button
+          className="menu-button"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span />
+          <span />
+        </button>
+        <nav className={menuOpen ? 'nav-links is-open' : 'nav-links'}>
+          <a href="#about" onClick={closeMenu}>About</a>
+          <a href="#experience" onClick={closeMenu}>Experience</a>
+          <a href="#projects" onClick={closeMenu}>Projects</a>
+          <a href="#contact" onClick={closeMenu}>Contact</a>
+          <a className="nav-github" href={githubUrl} target="_blank" rel="noreferrer">
+            <GithubIcon /> GitHub
+          </a>
         </nav>
       </header>
 
-      {/* Hero Section */}
-      <section className="min-h-screen flex flex-col justify-center items-center bg-gradient-to-r from-blue-500 to-purple-600 text-white pt-20">
-        <h1 className="text-5xl font-bold mb-4">Hi, I’m <span className="text-yellow-300">Lalit</span></h1>
-        <p className="text-xl mb-6"> Ruby on Rails | Shopify| Flutter | MERN Stack Developer </p>
-        <div className="flex gap-6 margin-2">
-          <a href="#projects" className="px-6 py-3 bg-yellow-400 text-black rounded-xl shadow-lg">View Projects</a>
-          <a href="#contact" className="px-6 py-3 bg-white text-black rounded-xl shadow-lg">Contact Me</a>
-        </div>
-         <div className="flex gap-4 mt-6">
-          <a href="https://github.com/lalitkalal5/" className="px-6 py-3 bg-transparent text-black rounded-xl shadow-lg"><img src="/githu logo.png"></a>
-          <a href="https://www.linkedin.com/in/lalit-kalal-481662198/" className="px-6 py-3 bg-transparent text-black rounded-xl shadow-lg"><img src="/linkedin.png"></a>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="max-w-4xl mx-auto py-20 px-6">
-        <h2 className="text-3xl font-bold mb-6 text-center">About Me</h2>
-        <div className="text-lg text-gray-700 space-y-6 text-center">
-    <p>I am an Android App & Web developer with a foundation in the Flutter & MERN stack.</p>
-    <hr className="border-gray-300" />
-    <p>My expertise extends to real-time communication technologies such as WebRTC and Socket.IO, 
-       and I am familiar with Django.</p>
-    <hr className="border-gray-300" />
-    <p>Currently, I am diving into the world of app development.</p>
-    <hr className="border-gray-300" />
-    <p>Enhancing skills in API integration as Retrofit, UI design, and cloud storage as Firebase solutions.</p>
-  </div>
-      </section>
-
-      {/* Skills Section */}
-      <section id="skills" className="bg-gray-100 py-20">
-        <h2 className="text-3xl font-bold text-center mb-8">Technologies & Skills</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto px-6">
-          {[ 'React', 'Node.js','Java-Script','MongoDB','Flutter','Retrofit','Firebase','socket.io','Shopify'].map(skill => (
-            <div key={skill} className="p-4 bg-white rounded-xl shadow text-center font-medium hover:scale-105 transition-transform">
-              {skill}
+      <main id="top">
+        <section className="hero">
+          <div className="hero-grid" />
+          <div className="hero-copy">
+            <p className="eyebrow"><span /> Available for new opportunities</p>
+            <h1>
+              I build digital products that feel <em>clear, fast,</em> and useful.
+            </h1>
+            <p className="hero-intro">
+              I&apos;m <strong>Lalit Kalal</strong>, a Ruby on Rails developer and full-stack
+              builder based in Gujarat. I work across web, mobile, realtime systems, and
+              e-commerce.
+            </p>
+            <div className="hero-actions">
+              <a className="button button-primary" href="#projects">
+                Explore my work <ArrowIcon />
+              </a>
+              <a className="button button-ghost" href={`mailto:${email}`}>
+                Let&apos;s talk
+              </a>
             </div>
-          ))}
-        </div>
-      </section>
+            <div className="hero-stats">
+              <div><strong>6+</strong><span>Featured builds</span></div>
+              <div><strong>20+</strong><span>Tools & technologies</span></div>
+              <div><strong>2025</strong><span>IT graduate</span></div>
+            </div>
+          </div>
+          <div className="portrait-wrap">
+            <div className="portrait-frame">
+              <img src="/lalir.png" alt="Lalit Kalal" />
+            </div>
+            <div className="portrait-note">
+              <span>Currently</span>
+              <strong>Building with Rails</strong>
+            </div>
+            <div className="orbit orbit-one" />
+            <div className="orbit orbit-two" />
+          </div>
+        </section>
 
-      {/* Projects Section */}
-            <section id="projects" className="max-w-6xl mx-auto py-20 px-6">
-  <h2 className="text-3xl font-bold text-center mb-8">Projects</h2>
-  <div className="grid md:grid-cols-3 gap-8">
-    {[
-      {
-        name: "Annochat",
-        desc: "A real-time chat app with WebRTC & Socket.IO.",
-        link: "https://annochat.onrender.com/",
-        image: "/images/annochat.png",
-        git:"https://github.com/lalitkalal5/annochat"
-      },
-      {
-        name: "Twitter-Clone",
-        desc: "A MERN social media clone with posts, likes & follows.",
-        link: "https://twitterclone-7pir.vercel.app/",
-        image: "/images/twitter-clone.png",
-        git:"https://github.com/lalitkalal5/twitterclone"
-      },
-      {
-        name: "News-Android App",
-        desc: "An Android app using Kotlin, Retrofit & Firebase.",
-        link: "https://github.com/lalitkalal5/NewsApp",
-        image: "/images/Newsapp.png",
-        git:"https://github.com/lalitkalal5/NewsApp"
-      }
-    ].map((project) => (
-      <div 
-        key={project.name} 
-        className="relative rounded-xl shadow-lg hover:shadow-2xl transition-shadow overflow-hidden group"
-        style={{
-          backgroundImage: `url(${project.image})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center"
-        }}
-      >
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-50 group-hover:bg-opacity-70 transition-opacity" />
-        
-        {/* Content */}
-        <div className="relative p-6 text-white flex flex-col justify-end h-64">
-          <h3 className="text-xl font-semibold">{project.name}</h3>
-          <p className="text-sm text-gray-200 mb-3">{project.desc}</p>
-          <a 
-            href={project.link} 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="inline-block px-4 py-2 bg-blue-500 rounded-lg text-sm font-medium hover:bg-blue-600"
-          >
-            Visit →
-          </a>
-
-           {/* GitHub Button */}
-            <a
-              href={project.git}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 bg-gray-800 rounded-lg hover:bg-gray-700 flex items-center justify-center"
-            >
-              {/* GitHub SVG */}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="white"
-                className="w-5 h-5"
-              >
-                <path
-                  fillRule="evenodd"
-                  d="M12 2C6.477 2 2 6.486 2 12.021c0 4.42 2.865 8.167 6.839 9.504.5.092.682-.217.682-.482 
-                  0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 
-                  1.004.07 1.531 1.033 1.531 1.033.892 1.53 2.341 1.088 2.91.833.091-.647.35-1.088.636-1.339-2.22-.253-4.555-1.113-4.555-4.951 
-                  0-1.093.39-1.988 1.029-2.688-.103-.254-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 
-                  9.564 0 0 1 12 6.844c.85.004 1.705.115 2.503.338 1.91-1.296 2.748-1.026 2.748-1.026.546 
-                  1.378.202 2.396.1 2.65.64.7 1.028 1.595 1.028 2.688 
-                  0 3.848-2.338 4.695-4.566 4.944.359.309.678.919.678 1.852 
-                  0 1.336-.012 2.415-.012 2.743 0 .268.18.58.688.481A10.025 
-                  10.025 0 0 0 22 12.021C22 6.486 17.523 2 12 2z"
-                  clipRule="evenodd"
-                />
-              </svg>
+        <section className="about section" id="about">
+          <div className="section-heading">
+            <p className="section-kicker">01 / About</p>
+            <h2>Developer mindset.<br />Product perspective.</h2>
+          </div>
+          <div className="about-copy">
+            <p className="lead">
+              I like understanding the whole system, not just the screen in front of me.
+            </p>
+            <p>
+              My work spans backend architecture, clean interfaces, realtime communication,
+              mobile development, and online retail operations. That range helps me connect
+              technical decisions to the people and workflows they serve.
+            </p>
+            <p>
+              I&apos;m currently a Ruby on Rails Developer at Essence Solusoft, after completing
+              a Bachelor of Engineering in Information Technology at LDRP-ITR.
+            </p>
+            <a className="text-link" href={githubUrl} target="_blank" rel="noreferrer">
+              Browse my GitHub profile <ArrowIcon />
             </a>
+          </div>
+        </section>
 
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
+        <section className="skills section" id="skills">
+          <div className="section-heading compact">
+            <p className="section-kicker">02 / Capabilities</p>
+            <h2>A versatile technical toolkit.</h2>
+          </div>
+          <div className="skill-grid">
+            {skillGroups.map((group, index) => (
+              <article className="skill-card" key={group.title}>
+                <span className="card-number">0{index + 1}</span>
+                <h3>{group.title}</h3>
+                <div className="skill-list">
+                  {group.skills.map((skill) => <span key={skill}>{skill}</span>)}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
 
+        <section className="experience section" id="experience">
+          <div className="section-heading">
+            <p className="section-kicker">03 / Experience</p>
+            <h2>Learning by building real systems.</h2>
+          </div>
+          <div className="timeline">
+            <article className="timeline-item">
+              <div className="timeline-date">Sep 2025 - Present</div>
+              <div>
+                <p className="timeline-company">Essence Solusoft / Ahmedabad</p>
+                <h3>Ruby on Rails Developer</h3>
+                <p>
+                  Developing a finance management system for institutional income,
+                  expenditures, taxes, and analytical reporting.
+                </p>
+              </div>
+            </article>
+            <article className="timeline-item">
+              <div className="timeline-date">Mar 2025 - Apr 2025</div>
+              <div>
+                <p className="timeline-company">FashionFloor India</p>
+                <h3>E-Commerce Executive</h3>
+                <p>
+                  Managed product listings, pricing, inventory coordination, order
+                  processing, customer queries, and promotional campaigns.
+                </p>
+              </div>
+            </article>
+            <article className="timeline-item">
+              <div className="timeline-date">Graduated 2025</div>
+              <div>
+                <p className="timeline-company">LDRP-ITR / KSV University</p>
+                <h3>B.E. Information Technology</h3>
+                <p>
+                  Built a broad foundation in computing systems and applied it through
+                  full-stack, Android, realtime, and computer-vision projects.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="bg-gray-900 text-white py-20 px-6">
-        <h2 className="text-3xl font-bold text-center mb-8">Contact Me</h2>
-        <form className="max-w-2xl mx-auto grid gap-4">
-          <input type="text" placeholder="Your Name" className="p-3 rounded-xl text-black" />
-          <input type="email" placeholder="Your Email" className="p-3 rounded-xl text-black" />
-          <textarea placeholder="Your Message" className="p-3 rounded-xl text-black" rows="5"></textarea>
-          <button type="submit" className="px-6 py-3 bg-yellow-400 text-black rounded-xl shadow-lg">Send</button>
-        </form>
-      </section>
+        <section className="projects section" id="projects">
+          <div className="projects-heading">
+            <div className="section-heading compact">
+              <p className="section-kicker">04 / Selected work</p>
+              <h2>Projects with range.</h2>
+            </div>
+            <a className="text-link" href={githubUrl} target="_blank" rel="noreferrer">
+              See all repositories <ArrowIcon />
+            </a>
+          </div>
+          <div className="project-grid">
+            {projects.map((project, index) => (
+              <article className={`project-card accent-${project.accent}`} key={project.name}>
+                <div className="project-visual">
+                  {project.image ? <img src={project.image} alt="" /> : (
+                    <div className="project-monogram">{project.name.slice(0, 2)}</div>
+                  )}
+                  <span className="project-index">0{index + 1}</span>
+                </div>
+                <div className="project-content">
+                  <p className="project-type">{project.type}</p>
+                  <h3>{project.name}</h3>
+                  <p>{project.description}</p>
+                  <div className="project-tags">
+                    {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
+                  </div>
+                  <div className="project-links">
+                    {project.demo && (
+                      <a href={project.demo} target="_blank" rel="noreferrer">
+                        Live demo <ArrowIcon />
+                      </a>
+                    )}
+                    {project.github && (
+                      <a href={project.github} target="_blank" rel="noreferrer">
+                        <GithubIcon /> Source
+                      </a>
+                    )}
+                    {project.status && <span>{project.status}</span>}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      {/* Footer */}
-      <footer className="bg-black text-gray-400 text-center py-6">
-        © {new Date().getFullYear()} Lalit Kalal 
+        <section className="contact section" id="contact">
+          <div>
+            <p className="section-kicker light">05 / Contact</p>
+            <h2>Have a useful idea?<br /><em>Let&apos;s build it.</em></h2>
+          </div>
+          <div className="contact-details">
+            <p>
+              I&apos;m open to developer roles, freelance work, and conversations about
+              interesting products.
+            </p>
+            <a className="contact-email" href={`mailto:${email}`}>{email}<ArrowIcon /></a>
+            <div className="social-links">
+              <a href={githubUrl} target="_blank" rel="noreferrer"><GithubIcon /> GitHub</a>
+              <a href={linkedinUrl} target="_blank" rel="noreferrer">LinkedIn <ArrowIcon /></a>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <a className="brand footer-brand" href="#top">LK<span>.</span></a>
+        <p>Designed and built by Lalit Kalal / {new Date().getFullYear()}</p>
+        <a href="#top">Back to top</a>
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
