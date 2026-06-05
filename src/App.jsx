@@ -3,12 +3,13 @@ import './App.css'
 
 const githubUrl = 'https://github.com/lalitkalal5'
 const linkedinUrl = 'https://www.linkedin.com/in/lalit-kalal-481662198/'
-const email = 'lalitkalal171@gmail.com'
+const email = 'lalitkalal71@gmail.com'
+const whatsappUrl = 'https://wa.me/919265589437?text=Hi%20Lalit%2C%20I%20saw%20your%20portfolio%20and%20want%20to%20talk%20about%20Medora%20or%20a%20business%20project.'
 
 const skillGroups = [
   {
-    title: 'Backend & Data',
-    skills: ['Ruby', 'Ruby on Rails', 'Node.js', 'PostgreSQL', 'MySQL', 'MongoDB'],
+    title: 'Business Operations',
+    skills: ['Inventory Management', 'Invoice Scanning', 'Billing Workflows', 'E-Commerce', 'Process Automation', 'Retail Operations'],
   },
   {
     title: 'Frontend & Mobile',
@@ -19,12 +20,22 @@ const skillGroups = [
     skills: ['WebSocket', 'WebRTC', 'Socket.IO', 'Firebase', 'AWS S3', 'REST APIs'],
   },
   {
-    title: 'Tools & Commerce',
-    skills: ['Git', 'GitHub', 'Postman', 'Shopify', 'MediaPipe', 'Google Sheets'],
+    title: 'Backend & Tools',
+    skills: ['Ruby on Rails', 'Node.js', 'PostgreSQL', 'MongoDB', 'GitHub', 'Postman'],
   },
 ]
 
 const projects = [
+  {
+    name: 'Medora',
+    type: 'Inventory & Billing Product',
+    description:
+      'The product I am actively selling: Medora reduces one of the most time-taking retail tasks by letting users scan purchase invoices and add items directly into inventory, while also managing billing and stock in one smoother workflow.',
+    tags: ['Invoice Scanning', 'Inventory', 'Billing'],
+    accent: 'green',
+    status: 'Flagship product',
+    demo: whatsappUrl,
+  },
   {
     name: 'Finance Management System',
     type: 'Ruby on Rails',
@@ -35,13 +46,14 @@ const projects = [
     status: 'Professional work',
   },
   {
-    name: 'SecondShelf',
+    name: 'BookAgain',
     type: 'E-Commerce Platform',
     description:
-      'A full-stack marketplace for buying and selling pre-owned books, including catalogue search, seller listings, cart, checkout, and order tracking.',
-    tags: ['E-Commerce', 'Full Stack', 'UX'],
+      'A live second-hand book marketplace built around the idea of giving books another life, with a clean buying experience and practical e-commerce flow.',
+    tags: ['E-Commerce', 'Marketplace', 'Books'],
     accent: 'amber',
-    status: 'In progress',
+    demo: 'https://book-again.vercel.app/',
+    status: 'Live product',
   },
   {
     name: 'Annochat',
@@ -137,27 +149,27 @@ function App() {
         <section className="hero">
           <div className="hero-grid" />
           <div className="hero-copy">
-            <p className="eyebrow"><span /> Available for new opportunities</p>
+            <p className="eyebrow"><span /> Technical entrepreneur / Business builder</p>
             <h1>
-              I build digital products that feel <em>clear, fast,</em> and useful.
+              I turn business problems into <em>simple, scalable</em> products.
             </h1>
             <p className="hero-intro">
-              I&apos;m <strong>Lalit Kalal</strong>, a Ruby on Rails developer and full-stack
-              builder based in Gujarat. I work across web, mobile, realtime systems, and
-              e-commerce.
+              I&apos;m <strong>Lalit Kalal</strong>, an entrepreneur-minded builder with an
+              Information Technology background. I use software to solve real business
+              bottlenecks, especially in e-commerce, inventory, billing, and operations.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#projects">
                 Explore my work <ArrowIcon />
               </a>
-              <a className="button button-ghost" href={`mailto:${email}`}>
-                Let&apos;s talk
+              <a className="button button-ghost" href={whatsappUrl} target="_blank" rel="noreferrer">
+                WhatsApp me
               </a>
             </div>
             <div className="hero-stats">
-              <div><strong>6+</strong><span>Featured builds</span></div>
-              <div><strong>20+</strong><span>Tools & technologies</span></div>
-              <div><strong>2025</strong><span>IT graduate</span></div>
+              <div><strong>7+</strong><span>Products & builds</span></div>
+              <div><strong>2</strong><span>Business domains</span></div>
+              <div><strong>IT</strong><span>Technical foundation</span></div>
             </div>
           </div>
           <div className="portrait-wrap">
@@ -166,7 +178,7 @@ function App() {
             </div>
             <div className="portrait-note">
               <span>Currently</span>
-              <strong>Building with Rails</strong>
+              <strong>Building Medora</strong>
             </div>
             <div className="orbit orbit-one" />
             <div className="orbit orbit-two" />
@@ -176,20 +188,21 @@ function App() {
         <section className="about section" id="about">
           <div className="section-heading">
             <p className="section-kicker">01 / About</p>
-            <h2>Developer mindset.<br />Product perspective.</h2>
+            <h2>Entrepreneurial vision.<br />Technical execution.</h2>
           </div>
           <div className="about-copy">
             <p className="lead">
-              I like understanding the whole system, not just the screen in front of me.
+              I am most interested in building businesses, not just building software.
             </p>
             <p>
-              My work spans backend architecture, clean interfaces, realtime communication,
-              mobile development, and online retail operations. That range helps me connect
-              technical decisions to the people and workflows they serve.
+              My IT background gives me the ability to turn ideas into working products, while
+              my e-commerce and operations experience keeps me focused on sales, inventory,
+              customer experience, efficiency, and sustainable growth.
             </p>
             <p>
-              I&apos;m currently a Ruby on Rails Developer at Essence Solusoft, after completing
-              a Bachelor of Engineering in Information Technology at LDRP-ITR.
+              I am currently selling Medora, a product that helps retailers scan purchase
+              invoices, add purchases into inventory, reduce manual entry, and manage billing
+              more conveniently.
             </p>
             <a className="text-link" href={githubUrl} target="_blank" rel="noreferrer">
               Browse my GitHub profile <ArrowIcon />
@@ -200,7 +213,7 @@ function App() {
         <section className="skills section" id="skills">
           <div className="section-heading compact">
             <p className="section-kicker">02 / Capabilities</p>
-            <h2>A versatile technical toolkit.</h2>
+            <h2>Business thinking backed by technology.</h2>
           </div>
           <div className="skill-grid">
             {skillGroups.map((group, index) => (
@@ -218,17 +231,18 @@ function App() {
         <section className="experience section" id="experience">
           <div className="section-heading">
             <p className="section-kicker">03 / Experience</p>
-            <h2>Learning by building real systems.</h2>
+            <h2>Learning business by building real systems.</h2>
           </div>
           <div className="timeline">
             <article className="timeline-item">
               <div className="timeline-date">Sep 2025 - Present</div>
               <div>
                 <p className="timeline-company">Essence Solusoft / Ahmedabad</p>
-                <h3>Ruby on Rails Developer</h3>
+                <h3>Business Systems Developer</h3>
                 <p>
                   Developing a finance management system for institutional income,
-                  expenditures, taxes, and analytical reporting.
+                  expenditures, taxes, and analytical reporting while learning how reliable
+                  software supports day-to-day business decisions.
                 </p>
               </div>
             </article>
@@ -239,7 +253,8 @@ function App() {
                 <h3>E-Commerce Executive</h3>
                 <p>
                   Managed product listings, pricing, inventory coordination, order
-                  processing, customer queries, and promotional campaigns.
+                  processing, customer queries, and promotional campaigns, gaining direct
+                  experience in how an online retail business operates.
                 </p>
               </div>
             </article>
@@ -249,8 +264,8 @@ function App() {
                 <p className="timeline-company">LDRP-ITR / KSV University</p>
                 <h3>B.E. Information Technology</h3>
                 <p>
-                  Built a broad foundation in computing systems and applied it through
-                  full-stack, Android, realtime, and computer-vision projects.
+                  Built the technical foundation needed to create products, automate manual
+                  processes, and transform business ideas into scalable digital systems.
                 </p>
               </div>
             </article>
@@ -261,7 +276,7 @@ function App() {
           <div className="projects-heading">
             <div className="section-heading compact">
               <p className="section-kicker">04 / Selected work</p>
-              <h2>Projects with range.</h2>
+            <h2>Products built around real needs.</h2>
             </div>
             <a className="text-link" href={githubUrl} target="_blank" rel="noreferrer">
               See all repositories <ArrowIcon />
@@ -269,7 +284,14 @@ function App() {
           </div>
           <div className="project-grid">
             {projects.map((project, index) => (
-              <article className={`project-card accent-${project.accent}`} key={project.name}>
+              <a
+                className={`project-card accent-${project.accent}`}
+                href={project.demo || project.github || githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                key={project.name}
+                aria-label={`Open ${project.name}`}
+              >
                 <div className="project-visual">
                   {project.image ? <img src={project.image} alt="" /> : (
                     <div className="project-monogram">{project.name.slice(0, 2)}</div>
@@ -285,19 +307,15 @@ function App() {
                   </div>
                   <div className="project-links">
                     {project.demo && (
-                      <a href={project.demo} target="_blank" rel="noreferrer">
-                        Live demo <ArrowIcon />
-                      </a>
+                      <span>Open project <ArrowIcon /></span>
                     )}
                     {project.github && (
-                      <a href={project.github} target="_blank" rel="noreferrer">
-                        <GithubIcon /> Source
-                      </a>
+                      <span><GithubIcon /> Source available</span>
                     )}
                     {project.status && <span>{project.status}</span>}
                   </div>
                 </div>
-              </article>
+              </a>
             ))}
           </div>
         </section>
@@ -305,17 +323,18 @@ function App() {
         <section className="contact section" id="contact">
           <div>
             <p className="section-kicker light">05 / Contact</p>
-            <h2>Have a useful idea?<br /><em>Let&apos;s build it.</em></h2>
+            <h2>Building a business?<br /><em>Let&apos;s make it smarter.</em></h2>
           </div>
           <div className="contact-details">
             <p>
-              I&apos;m open to developer roles, freelance work, and conversations about
-              interesting products.
+              I&apos;m interested in e-commerce opportunities, business partnerships, and
+              products that make everyday operations simpler and more profitable.
             </p>
             <a className="contact-email" href={`mailto:${email}`}>{email}<ArrowIcon /></a>
             <div className="social-links">
               <a href={githubUrl} target="_blank" rel="noreferrer"><GithubIcon /> GitHub</a>
               <a href={linkedinUrl} target="_blank" rel="noreferrer">LinkedIn <ArrowIcon /></a>
+              <a href={whatsappUrl} target="_blank" rel="noreferrer">WhatsApp <ArrowIcon /></a>
             </div>
           </div>
         </section>
